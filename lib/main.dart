@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/data/models/surah_model.dart';
+import 'package:quran_app/ui/detail_page.dart';
 import 'package:quran_app/ui/home_page.dart';
 
 void main() {
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName: (context) => const HomePage(),
+        DetailPage.routeName: (context) => DetailPage(surah: ModalRoute.of(context)?.settings.arguments as Surah)
       },
     );
   }

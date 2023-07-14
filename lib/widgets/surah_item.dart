@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/data/models/surah_model.dart';
+import 'package:quran_app/ui/detail_page.dart';
 
 class SurahItem extends StatelessWidget {
   final Surah surah;
@@ -10,7 +11,7 @@ class SurahItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('tapping');
+        Navigator.of(context).pushNamed(DetailPage.routeName, arguments: surah);
       },
       child: Card(
         child: Padding(

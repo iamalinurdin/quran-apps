@@ -24,6 +24,7 @@ class Surah {
   final String translation;
   final int verses;
   final Map<String, dynamic> audioFull;
+  final List? verse;
 
   Surah({
     required this.number,
@@ -33,7 +34,8 @@ class Surah {
     required this.description,
     required this.audioFull,
     required this.translation,
-    required this.verses
+    required this.verses,
+    required this.verse
   });
 
   factory Surah.fromJson(Map<String, dynamic> json) => Surah(
@@ -45,5 +47,6 @@ class Surah {
     audioFull: json['audioFull'],
     translation: json['arti'],
     verses: json['jumlahAyat'],
+    verse: json['ayat']
   );
 }
